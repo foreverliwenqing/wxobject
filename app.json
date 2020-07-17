@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/cinemaS/cinema",
+    "pages/my/my"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#dd403b",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "电影"
+    }, {
+      "pagePath": "pages/cinemaS/cinema",
+      "text": "电影院"
+    }, {
+      "pagePath": "pages/my/my",
+      "text": "我的"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 100000
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

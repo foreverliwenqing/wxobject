@@ -1,0 +1,23 @@
+<view class="container">
+	<view class="headerBox">
+		<view class="city">
+			<text>杭州</text>
+			<text class="iconfont icon-daosanjiao"> </text>
+		</view>
+		<view class="tabS">
+			<view class='{{ currentData == 0 ? "active" : "" }}' data-current="0" bindtap="choose">热映</view>
+			<view class='{{ currentData == 1 ? "active" : "" }}' data-current="1" bindtap="choose">待映</view>
+		</view>
+		<view class="searchIcon">
+			<text class="iconfont icon-sousuo"> </text>
+		</view>
+	</view>
+	<swiper current="{{currentData}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+		<swiper-item>
+			<view>热映</view>
+		</swiper-item>
+		<swiper-item>
+			<view>热映</view>
+		</swiper-item>
+	</swiper>
+</view>

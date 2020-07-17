@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+	<view class="headerBox">
+		<view class="city">
+			<text>杭州</text>
+			<text class="iconfont icon-daosanjiao"> </text>
+		</view>
+
+		<block class wx:for="{{tabs}}" wx:key="key" wx:item="item" wx:index="index">
+			<view class='{{ currentData == index ? "active" : "" }}' bindtap="choose" data-index="{{index}}">{{item}}</view>
+		</block>
+		<view class="searchIcon">
+			<text class="iconfont icon-sousuo"> </text>
+		</view>
+	</view>
+	<view hidden="{{ currentData != 0 }}">我是body1</view>
+	<view hidden="{{ currentData != 1 }}">我是body2</view>
+</view>
