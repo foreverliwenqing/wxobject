@@ -72,3 +72,11 @@
   align-items: center;
   font-weight: 700;
 }
+.listItem {
+  width: 100vw;
+  padding: 12px 14px 12px 0;
+  height: 90px;
+  max-height: 90px;
+  position: relative;
+  background-image: red;
+}

@@ -97,6 +97,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    * Mock.mock( rurl, function(options) )
 	    * Mock.mock( rurl, rtype, template )
 	    * Mock.mock( rurl, rtype, function(options) )
+
 	    根据数据模板生成模拟数据。
 	*/
 	Mock.mock = function(rurl, rtype, template) {
@@ -127,13 +128,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/* 
 	    ## Handler
+
 	    处理数据模板。
 	    
 	    * Handler.gen( template, name?, context? )
+
 	        入口方法。
+
 	    * Data Template Definition, DTD
 	        
 	        处理数据模板定义。
+
 	        * Handler.array( options )
 	        * Handler.object( options )
 	        * Handler.number( options )
@@ -143,10 +148,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	        * Handler.regexp( options )
 	        
 	        处理路径（相对和绝对）。
+
 	        * Handler.getValueByKeyPath( key, options )
+
 	    * Data Placeholder Definition, DPD
+
 	        处理数据占位符定义
+
 	        * Handler.placeholder( placeholder, context, templateContext, options )
+
 	*/
 
 	var Constant = __webpack_require__(2)
@@ -164,6 +174,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    name            属性名
 	    context         数据上下文，生成后的数据
 	    templateContext 模板上下文，
+
 	    Handle.gen(template, name, options)
 	    context
 	        currentContext, templateCurrentContext, 
@@ -666,6 +677,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/*
 	    ## Constant
+
 	    常量集合。
 	 */
 	/*
@@ -677,10 +689,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        'name|count.dmin-dmax': value
 	        'name|count.dcount': value
 	        'name|+step': value
+
 	        1 name, 2 step, 3 range [ min, max ], 4 drange [ dmin, dmax ]
+
 	    RE_PLACEHOLDER
 	        placeholder(*)
+
 	    [正则查看工具](http://www.regexper.com/)
+
 	    #26 生成规则 支持 负数，例如 number|-100-100
 	*/
 	module.exports = {
@@ -790,9 +806,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/*
 	    ### Mock.heredoc(fn)
+
 	    * Mock.heredoc(fn)
+
 	    以直观、安全的方式书写（多行）HTML 模板。
+
 	    **使用示例**如下所示：
+
 	        var tpl = Mock.heredoc(function() {
 	            /*!
 	        {{email}}{{age}}
@@ -826,16 +846,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/*
 		## Parser
+
 		解析数据模板（属性名部分）。
+
 		* Parser.parse( name )
 			
 			```json
 			{
 				parameters: [ name, inc, range, decimal ],
 				rnage: [ min , max ],
+
 				min: min,
 				max: max,
 				count : count,
+
 				decimal: decimal,
 				dmin: dmin,
 				dmax: dmax,
@@ -1224,6 +1248,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    _videoSize: ['720x480', '768x576', '1280x720', '1920x1080'],
 	    /*
 	        生成一个随机的图片地址。
+
 	        替代图片源
 	            http://fpoimg.com/
 	        参考自 
@@ -1263,6 +1288,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        http://brandcolors.net/
 	        A collection of major brand color codes curated by Galen Gidman.
 	        大牌公司的颜色集合
+
 	        // 获取品牌和颜色
 	        $('h2').each(function(index, item){
 	            item = $(item)
@@ -1428,8 +1454,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    /*
 	        生成一段随机的 Base64 图片编码。
+
 	        https://github.com/imsky/holder
 	        Holder renders image placeholders entirely on the client side.
+
 	        dataImageHolder: function(size) {
 	            return 'holder.js/' + size
 	        },
@@ -1446,6 +1474,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                * http://stackoverflow.com/questions/22953206/gulp-issues-with-cario-install-command-not-found-when-trying-to-installing-canva
 	                * https://github.com/Automattic/node-canvas/issues/415
 	                * https://github.com/Automattic/node-canvas/wiki/_pages
+
 	                PS：node-canvas 的安装过程实在是太繁琐了，所以不放入 package.json 的 dependencies。
 	             */
 	            var Canvas = module.require('canvas')
@@ -1503,9 +1532,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/*
 	    ## Color
+
 	    http://llllll.li/randomColor/
 	        A color generator for JavaScript.
 	        randomColor generates attractive colors by default. More specifically, randomColor produces bright colors with a reasonably high saturation. This makes randomColor particularly useful for data visualizations and generative art.
+
 	    http://randomcolour.com/
 	        var bg_colour = Math.floor(Math.random() * 16777215).toString(16);
 	        bg_colour = "#" + ("000000" + bg_colour).slice(-6);
@@ -1514,8 +1545,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    http://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/
 	        Creating random colors is actually more difficult than it seems. The randomness itself is easy, but aesthetically pleasing randomness is more difficult.
 	        https://github.com/devongovett/color-generator
+
 	    http://www.paulirish.com/2009/random-hex-color-code-snippets/
 	        Random Hex Color Code Generator in JavaScript
+
 	    http://chancejs.com/#color
 	        chance.color()
 	        // => '#79c157'
@@ -1525,18 +1558,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // => '#60f'
 	        chance.color({format: 'rgb'})
 	        // => 'rgb(110,52,164)'
+
 	    http://tool.c7sky.com/webcolor
 	        网页设计常用色彩搭配表
 	    
 	    https://github.com/One-com/one-color
 	        An OO-based JavaScript color parser/computation toolkit with support for RGB, HSV, HSL, CMYK, and alpha channels.
 	        API 很赞
+
 	    https://github.com/harthur/color
 	        JavaScript color conversion and manipulation library
+
 	    https://github.com/leaverou/css-colors
 	        Share & convert CSS colors
 	    http://leaverou.github.io/css-colors/#slategray
 	        Type a CSS color keyword, #hex, hsl(), rgba(), whatever:
+
 	    色调 hue
 	        http://baike.baidu.com/view/23368.htm
 	        色调指的是一幅画中画面色彩的总体倾向，是大的色彩效果。
@@ -1548,6 +1585,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        亮度是指发光体（反光体）表面发光（反光）强弱的物理量。
 	    照度 luminosity
 	        物体被照亮的程度,采用单位面积所接受的光通量来表示,表示单位为勒[克斯](Lux,lx) ,即 1m / m2 。
+
 	    http://stackoverflow.com/questions/1484506/random-color-generator-in-javascript
 	        var letters = '0123456789ABCDEF'.split('')
 	        var color = '#'
@@ -1636,6 +1674,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/*
 	    ## Color Convert
+
 	    http://blog.csdn.net/idfaya/article/details/6770414
 	        颜色空间RGB与HSV(HSL)的转换
 	*/
@@ -1817,6 +1856,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/*
 	    ## Color 字典数据
+
 	    字典数据来源 [A nicer color palette for the web](http://clrs.cc/)
 	*/
 	module.exports = {
@@ -1897,6 +1937,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/*
 	    ## Text
+
 	    http://www.lipsum.com/
 	*/
 	var Basic = __webpack_require__(6)
@@ -2076,6 +2117,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		/*
 		    打乱数组中元素的顺序，并返回。
 		    Given an array, scramble the order and return it.
+
 		    其他的实现思路：
 		        // https://code.google.com/p/jslibs/wiki/JavascriptTips
 		        result = result.sort(function() {
@@ -2109,8 +2151,11 @@ return /******/ (function(modules) { // webpackBootstrap
 		/*
 		    * Random.order(item, item)
 		    * Random.order([item, item ...])
+
 		    顺序获取数组中的元素
+
 		    [JSON导入数组支持数组数据录入](https://github.com/thx/RAP/issues/22)
+
 		    不支持单独调用！
 		*/
 		order: function order(array) {
@@ -2139,6 +2184,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/*
 	    ## Name
+
 	    [Beyond the Top 1000 Names](http://www.ssa.gov/oact/babynames/limits.html)
 	*/
 	module.exports = {
@@ -2234,6 +2280,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = {
 	    /*
 	        随机生成一个 URL。
+
 	        [URL 规范](http://www.w3.org/Addressing/URL/url-spec.txt)
 	            http                    Hypertext Transfer Protocol 
 	            ftp                     File Transfer protocol 
@@ -2362,8 +2409,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/*
 	    ## Address 字典数据
+
 	    字典数据来源 http://www.atatech.org/articles/30028?rnd=254259856
+
 	    国标 省（市）级行政区划码表
+
 	    华北   北京市 天津市 河北省 山西省 内蒙古自治区
 	    东北   辽宁省 吉林省 黑龙江省
 	    华东   上海市 江苏省 浙江省 安徽省 福建省 江西省 山东省
@@ -6456,6 +6506,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		},
 		/*
 		    随机生成一个 GUID。
+
 		    http://www.broofa.com/2008/09/javascript-uuid-function/
 		    [UUID 规范](http://www.ietf.org/rfc/rfc4122.txt)
 		        UUIDs (Universally Unique IDentifier)
@@ -6493,6 +6544,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		},
 		/*
 		    随机生成一个 18 位身份证。
+
 		    [身份证](http://baike.baidu.com/view/1697.htm#4)
 		        地址码 6 + 出生日期码 8 + 顺序码 3 + 校验码 1
 		    [《中华人民共和国行政区划代码》国家标准(GB/T2260)](http://zhidao.baidu.com/question/1954561.html)
@@ -7126,9 +7178,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/*
 	    ## RegExp Handler
+
 	    https://github.com/ForbesLindesay/regexp
 	    https://github.com/dmajda/pegjs
 	    http://www.regexper.com/
+
 	    每个节点的结构
 	        {
 	            type: '',
@@ -7137,6 +7191,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            body: {},
 	            escaped: true/false
 	        }
+
 	    type 可选值
 	        alternate             |         选择
 	        match                 匹配
@@ -7154,6 +7209,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        octal                 八进制
 	        back-reference        \n        反向引用
 	        control-character     \cX       控制字符
+
 	        // Token
 	        start               ^       开头
 	        end                 $       结尾
@@ -7525,7 +7581,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/*
 	    ## toJSONSchema
+
 	    把 Mock.js 风格的数据模板转换成 JSON Schema。
+
 	    > [JSON Schema](http://json-schema.org/)
 	 */
 	var Constant = __webpack_require__(2)
@@ -7582,6 +7640,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/*
 	    ## valid(template, data)
+
 	    校验真实数据 data 是否与数据模板 template 匹配。
 	    
 	    实现思路：
@@ -7595,6 +7654,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        rule               属性值生成规则
 	    2. 递归验证规则。
 	        然后用 JSON-Schema 校验真实数据，校验项包括属性名、值类型、值、值生成规则。
+
 	    提示信息 
 	    https://github.com/fge/json-schema-validator/blob/master/src/main/resources/com/github/fge/jsonschema/validator/validation.properties
 	    [JSON-Schama validator](http://json-schema-validator.herokuapp.com/)
@@ -7892,9 +7952,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    
 	    Equal, not equal to, greater than, less than, greater than or equal to, less than or equal to
 	    路径 验证类型 描述 
+
 	    Expect path.name is less than or equal to expected, but path.name is actual.
+
 	    Expect path.name is less than or equal to expected, but path.name is actual.
 	    Expect path.name is greater than or equal to expected, but path.name is actual.
+
 	*/
 	var Assert = {
 	    message: function(item) {
@@ -8034,6 +8097,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* global window, document, location, Event, setTimeout */
 	/*
 	    ## MockXMLHttpRequest
+
 	    期望的功能：
 	    1. 完整地覆盖原生 XHR 的行为
 	    2. 完整地模拟原生 XHR 的行为
@@ -8043,23 +8107,28 @@ return /******/ (function(modules) { // webpackBootstrap
 	    6. 兼容 XMLHttpRequest 和 ActiveXObject
 	        new window.XMLHttpRequest()
 	        new window.ActiveXObject("Microsoft.XMLHTTP")
+
 	    关键方法的逻辑：
 	    * new   此时尚无法确定是否需要拦截，所以创建原生 XHR 对象是必须的。
 	    * open  此时可以取到 URL，可以决定是否进行拦截。
 	    * send  此时已经确定了请求方式。
+
 	    规范：
 	    http://xhr.spec.whatwg.org/
 	    http://www.w3.org/TR/XMLHttpRequest2/
+
 	    参考实现：
 	    https://github.com/philikon/MockHttpRequest/blob/master/lib/mock.js
 	    https://github.com/trek/FakeXMLHttpRequest/blob/master/fake_xml_http_request.js
 	    https://github.com/ilinsky/xmlhttprequest/blob/master/XMLHttpRequest.js
 	    https://github.com/firebug/firebug-lite/blob/master/content/lite/xhr.js
 	    https://github.com/thx/RAP/blob/master/lab/rap.plugin.xinglie.js
+
 	    **需不需要全面重写 XMLHttpRequest？**
 	        http://xhr.spec.whatwg.org/#interface-xmlhttprequest
 	        关键属性 readyState、status、statusText、response、responseText、responseXML 是 readonly，所以，试图通过修改这些状态，来模拟响应是不可行的。
 	        因此，唯一的办法是模拟整个 XMLHttpRequest，就像 jQuery 对事件模型的封装。
+
 	    // Event handlers
 	    onloadstart         loadstart
 	    onprogress          progress
@@ -8080,6 +8149,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/*
 	    PhantomJS
 	    TypeError: '[object EventConstructor]' is not a constructor (evaluating 'new Event("readystatechange")')
+
 	    https://github.com/bluerail/twitter-bootstrap-rails-confirm/issues/18
 	    https://github.com/ariya/phantomjs/issues/11289
 	*/
@@ -8466,3 +8536,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	module.exports = MockXMLHttpRequest
+
+/***/ })
+/******/ ])
+});
+;

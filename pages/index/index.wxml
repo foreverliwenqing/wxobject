@@ -13,6 +13,18 @@
 			<text class="iconfont icon-sousuo"> </text>
 		</view>
 	</view>
-	<view hidden="{{ currentData != 0 }}">我是body1</view>
-	<view hidden="{{ currentData != 1 }}">我是body2</view>
+	<view hidden="{{ currentData != 0 }}">
+		<!-- <view wx:for="{{listS}}">
+			{{ item.name }}
+		</view> -->
+		<view class="listItem" wx:for="{{listS}}">
+			<image src="{{item.poster}}"></image>
+			<block></block>
+		</view>
+	</view>
+	<view hidden="{{ currentData != 1 }}">
+		<!-- <view wx:for="{{listS}}">
+			{{ item.name }}
+		</view> -->
+	</view>
 </view>

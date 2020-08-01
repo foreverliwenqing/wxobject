@@ -3408,7 +3408,7 @@ function ajax(data = '', fn, method = "get", header = {}) {
         }
       ]
     })
-    fn(res);
+    fn(res);  
   }
 }
 

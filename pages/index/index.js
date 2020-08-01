@@ -5,16 +5,18 @@ var API = require('../../utils/api.js')
 
 Page({
   data: {
-    currentData: 1,
+    currentData: 0,
+    listS: [],
     tabs: [
       "热映", "待映"
     ],
   },
   onLoad: function () {
+    let that = this;
     API.ajax('', function (res) {
       console.log(res)
       that.setData({
-        list: res.data
+        listS: res.data
       })
     });
   },
